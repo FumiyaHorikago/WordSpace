@@ -1,0 +1,331 @@
+@-webkit-keyframes borderSlide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes borderSlide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes heightSlide {
+  0% {
+    padding: 0;
+  }
+  100% {
+    padding: 200px 0;
+  }
+}
+
+@keyframes heightSlide {
+  0% {
+    padding: 0;
+  }
+  100% {
+    padding: 200px 0;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bgPosition {
+  0% {
+    background-position-x: left;
+  }
+  100% {
+    background-position-x: right;
+  }
+}
+
+@keyframes bgPosition {
+  0% {
+    background-position-x: left;
+  }
+  100% {
+    background-position-x: right;
+  }
+}
+
+body {
+  position: relative;
+}
+
+body header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 10px;
+  z-index: 1;
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+body header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header ul li:last-child {
+  margin-left: 20px;
+}
+
+body header ul li a {
+  display: block;
+  position: relative;
+}
+
+body header ul li a::before {
+  content: "";
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #555;
+}
+
+body header ul li a:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+body main .container {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: relative;
+}
+
+body main .container .background {
+  width: 100%;
+  background-color: #aaa;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-image: url("../../img/12244.jpg");
+  background-position: left;
+  background-size: 60%;
+  -webkit-animation: heightSlide 0.5s ease forwards, bgPosition 60s normal infinite;
+          animation: heightSlide 0.5s ease forwards, bgPosition 60s normal infinite;
+}
+
+body main .container .background::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body main .container .background::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #555;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+body main .container .background .title-wrap {
+  position: relative;
+}
+
+body main .container .background .title-wrap .subtitle {
+  width: 30%;
+  margin: 0 auto 40px;
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+body main .container .background .title-wrap .title {
+  width: 30%;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+body footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10px;
+  z-index: 1;
+  opacity: 0;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+body footer .accounts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer .accounts .login .errormsg {
+  font-size: 14px;
+  color: red;
+  line-height: 2;
+}
+
+body footer .accounts .login form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer .accounts .login form .form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 20px;
+}
+
+body footer .accounts .login form .form-control label {
+  display: block;
+  margin-right: 5px;
+}
+
+body footer .accounts .login form .form-control input {
+  border: solid 1px #aaa;
+  font-size: 14px;
+  padding: 3px;
+}
+
+body footer .accounts .login form .submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body footer .accounts .login form .submit button {
+  display: block;
+  position: relative;
+}
+
+body footer .accounts .login form .submit button::before {
+  content: "";
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #555;
+}
+
+body footer .accounts .login form .submit button:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+body footer .accounts .login form .submit a {
+  display: block;
+  margin-left: 20px;
+  position: relative;
+}
+
+body footer .accounts .login form .submit a:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #555;
+}
+
+body footer .accounts .login form .submit a::before {
+  content: "";
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #555;
+}
+
+body footer .accounts .login form .submit a:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+/*# sourceMappingURL=login.css.map */

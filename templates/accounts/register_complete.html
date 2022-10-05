@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/accounts/register.css' %}">
+{% endblock css %}
+
+{% block title %}
+新規登録 | 言葉の間
+{% endblock title %}
+
+{% block header %}
+<div class="container">
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'accounts:Service' %}">利用規約</a></li>
+            <li><a href="{% url 'accounts:Privacy' %}">プライバシーポリシー</a></li>
+        </ul>
+    </div>
+    <div class="title">
+        <a href="{% url 'accounts:Login' %}"><h1><img src="{% static 'img/title.svg' %}" alt="言葉の間"></h1></a>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <div class="register_confirm">
+        <div class="title">
+            <h2>- 登録完了 -</h2>
+        </div>
+        <div class="content">
+            <p>
+                ユーザー登録が完了しました。<br>
+                トップ画面よりログインしてください。
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div class="container">
+
+</div>
+{% endblock footer %}

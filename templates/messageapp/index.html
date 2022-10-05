@@ -1,0 +1,45 @@
+{% extends 'appbase.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/messageapp/home.css' %}">
+{% endblock css %}
+{% block js %}
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/ajax.js' %}"></script>
+<script src="{% static 'js/android.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock js %}
+{% block contents %}
+<div class="container">
+
+    <!-- opening -->
+    {% include 'messageapp/widgets/opening.html' %}
+
+    <!-- audio -->
+    {% include 'messageapp/widgets/audio.html' %}
+
+    <!-- Navigator -->
+    {% include 'messageapp/widgets/navigator.html' %}
+
+    <!-- Navigation -->
+    {% include 'messageapp/widgets/navigation.html' %}
+
+    <!-- Display Posts -->
+    <div class="message-wrap interface">
+        {% include 'messageapp/widgets/messageWrap.html' %}
+    </div>
+
+    <!-- Details Post -->
+    {% include 'messageapp/widgets/detailsPost.html' %}
+
+    <!-- TALK Interface -->
+    {% include 'messageapp/widgets/talkInterface.html' %}
+
+    <!-- CHAIN Interface -->
+    {% include 'messageapp/widgets/chainInterface.html' %}
+
+    <!-- EFFECT Interface -->
+    {% include 'messageapp/widgets/effectInterface.html' %}
+
+</div>
+{% endblock contents %}

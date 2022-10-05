@@ -1,0 +1,57 @@
+<dl class="original">
+    <dt>
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.57 63.87">
+                <g>
+                    <g>
+                        <circle cx="23.3" cy="15.44" r="15.44" />
+                        <path
+                            d="M22.79,31.65h0c12.58,0,22.79,10.21,22.79,22.79v9.43H0v-9.43C0,41.86,10.21,31.65,22.79,31.65Z" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <span>{{ nickname }}</span>
+    </dt>
+    <dd>
+        <p>
+            {{ original.text }}
+        </p>
+        <input type="hidden">
+        <button>報告</button>
+    </dd>
+</dl>
+{% for reply in replyQuery %}
+<dl class="replyWrapper">
+    {% if forloop.counter == replyQuery|length and reply.auth != user.id %}
+        <input type="hidden" id="lastID" value="{{ reply.id }}">
+    {% endif %}
+    <dt>
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.57 63.87">
+                <g>
+                    <g>
+                        <circle cx="23.3" cy="15.44" r="15.44" />
+                        <path
+                            d="M22.79,31.65h0c12.58,0,22.79,10.21,22.79,22.79v9.43H0v-9.43C0,41.86,10.21,31.65,22.79,31.65Z" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        {% if reply.auth == user.id %}
+            <span>{{ myname }}</span>
+        {% else %}
+            <span>{{ nickname }}</span>
+        {% endif %}
+    </dt>
+    <dd>
+        <p>
+            {{ reply.text }}
+        </p>
+        {% if reply.auth != user.id %}
+            <input type="hidden">
+            <button>報告</button>
+        {% endif %}
+    </dd>
+</dl>
+{% endfor %}

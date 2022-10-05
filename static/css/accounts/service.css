@@ -1,0 +1,147 @@
+@-webkit-keyframes bgPosition {
+  0% {
+    background-position-x: left;
+  }
+  100% {
+    background-position-x: right;
+  }
+}
+
+@keyframes bgPosition {
+  0% {
+    background-position-x: left;
+  }
+  100% {
+    background-position-x: right;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body header .container {
+  background-image: url("../../img/12244.jpg");
+  background-position: center;
+  background-size: 40%;
+  -webkit-animation: bgPosition 60s normal infinite;
+          animation: bgPosition 60s normal infinite;
+  padding: 10px;
+  border-bottom: solid 5px #555;
+}
+
+body header .container .menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body header .container .menu ul li:last-child {
+  margin-left: 20px;
+}
+
+body header .container .menu ul li a {
+  display: block;
+  position: relative;
+}
+
+body header .container .menu ul li a::before {
+  content: "";
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #555;
+}
+
+body header .container .menu ul li a:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+body header .container .title {
+  padding: 10px;
+}
+
+body header .container .title h1 {
+  width: 200px;
+  margin: 0 auto;
+}
+
+body main .container {
+  min-height: 100vh;
+  padding: 80px 10px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+body main .container .title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body main .container .text {
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+body main .container .policy dl {
+  margin-bottom: 30px;
+}
+
+body main .container .policy dl dt {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+body main .container .policy dl dd {
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+body main .container .policy dl dd ol li {
+  counter-increment: count1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main .container .policy dl dd ol li::before {
+  content: counter(count1) ".";
+  margin-right: 10px;
+}
+
+body footer .container {
+  background-image: url("../../img/12244.jpg");
+  background-position: center;
+  background-size: 40%;
+  -webkit-animation: bgPosition 60s normal infinite;
+          animation: bgPosition 60s normal infinite;
+  padding: 10px;
+  border-top: solid 5px #555;
+  min-height: 100px;
+}
+/*# sourceMappingURL=service.css.map */

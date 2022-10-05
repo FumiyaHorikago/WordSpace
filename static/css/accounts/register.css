@@ -1,0 +1,328 @@
+@-webkit-keyframes bgPosition {
+  0% {
+    background-position-x: left;
+  }
+  100% {
+    background-position-x: right;
+  }
+}
+
+@keyframes bgPosition {
+  0% {
+    background-position-x: left;
+  }
+  100% {
+    background-position-x: right;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+
+body header .container {
+  background-image: url("../../img/12244.jpg");
+  background-position: center;
+  background-size: 40%;
+  -webkit-animation: bgPosition 60s normal infinite;
+          animation: bgPosition 60s normal infinite;
+  padding: 10px;
+  border-bottom: solid 5px #555;
+}
+
+body header .container .menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body header .container .menu ul li:last-child {
+  margin-left: 20px;
+}
+
+body header .container .menu ul li a {
+  display: block;
+  position: relative;
+}
+
+body header .container .menu ul li a::before {
+  content: "";
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #555;
+}
+
+body header .container .menu ul li a:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+body header .container .title {
+  padding: 10px;
+}
+
+body header .container .title h1 {
+  width: 200px;
+  margin: 0 auto;
+}
+
+body main .container {
+  min-height: 100vh;
+  padding: 80px 10px;
+}
+
+body main .container .message {
+  margin-bottom: 40px;
+}
+
+body main .container .message p {
+  padding-bottom: 40px;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 1;
+  -webkit-animation: fadeIn 4s ease forwards;
+          animation: fadeIn 4s ease forwards;
+}
+
+body main .container .register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  background-color: white;
+  border: solid 1px #eee;
+  border-radius: 10px;
+  -webkit-filter: drop-shadow(2px 2px 3px #ddd);
+          filter: drop-shadow(2px 2px 3px #ddd);
+}
+
+body main .container .register .title {
+  margin-bottom: 30px;
+}
+
+body main .container .register .title h2 {
+  font-size: 20px;
+}
+
+body main .container .register .content {
+  width: 100%;
+}
+
+body main .container .register .content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body main .container .register .content .login {
+  display: block;
+  position: relative;
+}
+
+body main .container .register .content .login::before {
+  content: "";
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #555;
+}
+
+body main .container .register .content .login:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+body main .container .register .content .formWrapper form .errorlist {
+  font-size: 14px;
+  color: red;
+  margin: 5px 0;
+}
+
+body main .container .register .content .formWrapper form p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+}
+
+body main .container .register .content .formWrapper form p label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+body main .container .register .content .formWrapper form p input,
+body main .container .register .content .formWrapper form p select {
+  border: solid 1px #b1b1b1;
+  font-size: 16px;
+  padding: 3px 5px;
+}
+
+body main .container .register .content .formWrapper form .btn {
+  border: solid 1px #b1b1b1;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #fafafa;
+}
+
+body main .container .register_confirm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  background-color: white;
+  border: solid 1px #eee;
+  border-radius: 10px;
+  -webkit-filter: drop-shadow(2px 2px 3px #ddd);
+          filter: drop-shadow(2px 2px 3px #ddd);
+}
+
+body main .container .register_confirm .title {
+  margin-bottom: 30px;
+}
+
+body main .container .register_confirm .title h2 {
+  font-size: 20px;
+}
+
+body main .container .register_confirm .content {
+  width: 100%;
+}
+
+body main .container .register_confirm .content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body main .container .register_confirm .content .login {
+  display: block;
+  position: relative;
+}
+
+body main .container .register_confirm .content .login::before {
+  content: "";
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #555;
+}
+
+body main .container .register_confirm .content .login:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+body main .container .register_confirm .content .formWrapper form p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+}
+
+body main .container .register_confirm .content .formWrapper form p label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+body main .container .register_confirm .content .formWrapper form p input,
+body main .container .register_confirm .content .formWrapper form p select {
+  border: solid 1px #b1b1b1;
+  font-size: 16px;
+  padding: 3px 5px;
+}
+
+body main .container .register_confirm .content .formWrapper form .btn {
+  border: solid 1px #b1b1b1;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #fafafa;
+}
+
+body footer .container {
+  background-image: url("../../img/12244.jpg");
+  background-position: center;
+  background-size: 40%;
+  -webkit-animation: bgPosition 60s normal infinite;
+          animation: bgPosition 60s normal infinite;
+  padding: 10px;
+  border-top: solid 5px #555;
+  min-height: 100px;
+}
+/*# sourceMappingURL=register.css.map */

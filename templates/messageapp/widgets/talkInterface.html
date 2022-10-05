@@ -1,0 +1,27 @@
+<div class="write-wrap">
+    <div class="inside">
+        <div class="desc">
+            <strong>発言</strong>
+            <p>
+                あなたの想いを、言葉に込めて
+            </p>
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="field">
+                {% if not field.is_hidden %}
+                {# 通常フィールドはラベルと入力枠を出力 #}
+                {{ field }}
+                {% endif %}
+                {% for error in field.errors %}
+                {{error}}
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <div class="submit">
+                <input type="submit" value="発言する" id="sendMessage">
+            </div>
+        </form>
+    </div>
+</div>

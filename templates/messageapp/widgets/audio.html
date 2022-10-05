@@ -1,0 +1,47 @@
+{% load static %}
+
+{% if impact_class == 'negative' %}
+    <audio id="audio" src="{% static 'media/negative.mp3' %}" loop></audio>
+{% elif impact_class == 'positive' %}
+    <audio id="audio" src="{% static 'media/positive.mp3' %}" loop></audio>
+{% else %}
+    {% if bgm_choice == 0 %}
+        <audio id="audio" src="{% static 'media/newtral.mp3' %}" loop></audio>
+    {% else %}
+        <audio id="audio" src="{% static 'media/newtral2.mp3' %}" loop></audio>
+    {% endif %}
+{% endif %}
+
+<div id="Serif">
+    <!-- startup -->
+    <audio id="audio-StartUp1" src="{% static 'android/startup1.mp3' %}"></audio>
+    <audio id="audio-StartUp2" src="{% static 'android/startup2.mp3' %}"></audio>
+    <audio id="audio-StartUp3" src="{% static 'android/startup3.mp3' %}"></audio>
+    <!-- chain -->
+    <audio id="audio-Response" src="{% static 'android/response.mp3' %}"></audio>
+    <!-- talk -->
+    <audio id="audio-Write-p1" src="{% static 'android/write_p1.mp3' %}"></audio>
+    <audio id="audio-Write-p2" src="{% static 'android/write_p2.mp3' %}"></audio>
+    <audio id="audio-Write-p3" src="{% static 'android/write_p3.mp3' %}"></audio>
+    <!-- effect -->
+    <audio id="audio-Effect-p1" src="{% static 'android/effect_p1.mp3' %}"></audio>
+    <audio id="audio-Effect-p2" src="{% static 'android/effect_p2.mp3' %}"></audio>
+    <audio id="audio-Effect-p3" src="{% static 'android/effect_p3.mp3' %}"></audio>
+    <!-- reload -->
+    <audio id="audio-Reload-p1" src="{% static 'android/reload_p1.mp3' %}"></audio>
+    <audio id="audio-Reload-p2" src="{% static 'android/reload_p2.mp3' %}"></audio>
+    <audio id="audio-Reload-p3" src="{% static 'android/reload_p3.mp3' %}"></audio>
+    <!-- emotions -->
+    <audio id="audio-Nega3" src="{% static 'android/nega3.mp3' %}"></audio>
+    <audio id="audio-Nega2" src="{% static 'android/nega2.mp3' %}"></audio>
+    <audio id="audio-Nega1" src="{% static 'android/nega1.mp3' %}"></audio>
+    <audio id="audio-Newtral" src="{% static 'android/newtral.mp3' %}"></audio>
+    <audio id="audio-Posi3" src="{% static 'android/posi3.mp3' %}"></audio>
+    <audio id="audio-Posi2" src="{% static 'android/posi2.mp3' %}"></audio>
+    <audio id="audio-Posi1" src="{% static 'android/posi1.mp3' %}"></audio>
+    <!-- error -->
+    <audio id="audio-Error1" src="{% static 'android/errorCode1.mp3' %}"></audio>
+    <audio id="audio-Error2" src="{% static 'android/errorCode2.mp3' %}"></audio>
+    <audio id="audio-Error3" src="{% static 'android/errorCode3.mp3' %}"></audio>
+    <audio id="audio-Error4" src="{% static 'android/errorCode4.mp3' %}"></audio>
+</div>

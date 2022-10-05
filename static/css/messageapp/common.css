@@ -1,0 +1,10 @@
+body {
+  font-family: 'Hina Mincho', serif;
+}
+
+body footer {
+  position: absolute;
+  -webkit-transform: translateY(-9999px);
+          transform: translateY(-9999px);
+}
+/*# sourceMappingURL=common.css.map */

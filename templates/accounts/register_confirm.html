@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/accounts/register.css' %}">
+{% endblock css %}
+
+{% block title %}
+新規登録 | 言葉の間
+{% endblock title %}
+
+{% block header %}
+<div class="container">
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'accounts:Service' %}">利用規約</a></li>
+            <li><a href="{% url 'accounts:Privacy' %}">プライバシーポリシー</a></li>
+        </ul>
+    </div>
+    <div class="title">
+        <a href="{% url 'accounts:Login' %}"><h1><img src="{% static 'img/title.svg' %}" alt="言葉の間"></h1></a>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <div class="register_confirm">
+        <div class="title">
+            <h2>- 入力内容確認 -</h2>
+        </div>
+        <div class="content">
+            <dl>
+                <dt>ユーザーID:</dt>
+                <dd>{{ account_form.username.value }}</dd>
+            </dl>
+            <dl>
+                <dt>メールアドレス:</dt>
+                <dd>{{ account_form.email.value }}</dd>
+            </dl>
+            <dl>
+                <dt>パスワード:</dt>
+                <dd>********</dd>
+            </dl>
+            <dl>
+                <dt>ニックネーム：</dt>
+                <dd>{{ account_form.nickname.value }}</dd>
+            </dl>
+            <dl>
+                <dt>生年月日:</dt>
+                <dd>{{ add_account_form.birthday.value }}</dd>
+            </dl>
+            <dl>
+                <dt>性別:</dt>
+                <dd>{{ add_account_form.gender.value }}</dd>
+            </dl>
+            <form action="{% url 'accounts:register_complete' %}" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                {{ account_form.username.as_hidden}}
+                {{ account_form.email.as_hidden}}
+                {{ account_form.password.as_hidden}}
+                {{ account_form.nickname.as_hidden}}
+                {{ add_account_form.birthday.as_hidden }}
+                {{ add_account_form.gender.as_hidden }}
+                <div>
+                    <input class="btn" type="submit" name="submit" value="登録">
+                </div>
+                <div>
+                    <input class="btn" type="submit" name="back" value="戻る">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div class="container">
+
+</div>
+{% endblock footer %}

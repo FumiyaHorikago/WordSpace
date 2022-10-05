@@ -1,0 +1,350 @@
+@charset 'utf-8';
+
+.eachTextAnime span {
+    opacity: 0;
+}
+.eachTextAnime.appeartext span {
+    animation: text_anime_on 4s ease-out forwards;
+}
+@keyframes text_anime_on {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes turnAround {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.flash{
+    animation-name:borderFlash;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes borderFlash{
+    0%{
+        border: 0.5px solid rgb(150, 150, 150);
+    }
+    100%{
+        border: 1px solid rgb(80, 255, 237);
+    }
+}
+
+.talk{
+    animation-name:talk;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes talk{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(177, 255, 241) inset;
+        border:#eee solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(177, 255, 241) inset;
+        border:#eee solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+
+.startup{
+    animation:startup 2s alternate-reverse infinite, startup2 10s ease forwards;
+}
+@keyframes startup{
+    0%{
+        border: 0.5px solid rgb(150, 150, 150);
+    }
+    #{percentage(random(30)/100)}{
+        border: 0.5px solid rgb(208, 33, 33);
+    }
+    #{percentage(random(40)/100)}{
+        border: 0.5px solid rgb(150, 150, 150);
+    }
+    #{percentage(random(90)/100)}{
+        border: 0.5px solid rgb(208, 33, 33);
+    }
+    100%{
+        border: 0.5px solid rgb(150, 150, 150);
+    }
+}
+@keyframes startup2{
+    0%{
+        background-color: black;
+        box-shadow: 0 0 80px black inset;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+
+
+.Newtral{
+    animation-name:newtral;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.PosiLv1{
+    animation-name:posi1;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.PosiLv2{
+    animation-name:posi2;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.PosiLvMax{
+    animation-name:posi3;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.NegaLv1{
+    animation-name:nega1;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.NegaLv2{
+    animation-name:nega2;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.NegaLvMax{
+    animation-name:nega3;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.ptError{
+    animation-name:error;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes newtral{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(228, 228, 228);
+        box-shadow: 0 0 80px rgb(130, 186, 205) inset;
+        border:rgb(49, 255, 245) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(228, 228, 228);
+        box-shadow: 0 0 80px rgb(130, 186, 205) inset;
+        border:rgb(49, 255, 245) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+@keyframes posi1{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 80px rgb(255, 227, 254) inset;
+        border:rgb(255, 237, 248) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 80px rgb(255, 227, 254) inset;
+        border:rgb(255, 237, 248) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+@keyframes posi2{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(255, 246, 228);
+        box-shadow: 0 0 80px rgb(255, 218, 170) inset;
+        border:rgb(255, 251, 193) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(255, 246, 228);
+        box-shadow: 0 0 80px rgb(255, 218, 170) inset;
+        border:rgb(255, 251, 193) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+@keyframes posi3{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(255, 224, 247);
+        box-shadow: 0 0 80px rgb(255, 167, 224) inset;
+        border:rgb(255, 255, 255) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(255, 224, 247);
+        box-shadow: 0 0 80px rgb(255, 167, 224) inset;
+        border:rgb(255, 255, 255) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+@keyframes nega1{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(238, 238, 238);
+        box-shadow: 0 0 80px rgb(156, 162, 216) inset;
+        border:rgb(238, 238, 238) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(238, 238, 238);
+        box-shadow: 0 0 80px rgb(156, 162, 216) inset;
+        border:rgb(238, 238, 238) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+@keyframes nega2{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(188, 188, 188);
+        box-shadow: 0 0 80px rgb(80, 86, 145) inset;
+        border:rgb(137, 137, 137) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(188, 188, 188);
+        box-shadow: 0 0 80px rgb(80, 86, 145) inset;
+        border:rgb(137, 137, 137) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+@keyframes nega3{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(64, 16, 16);
+        box-shadow: 0 0 80px rgb(58, 35, 118) inset;
+        border:rgb(135, 16, 16) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(64, 16, 16);
+        box-shadow: 0 0 80px rgb(58, 35, 118) inset;
+        border:rgb(135, 16, 16) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
+@keyframes error{
+    0%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(30)/100)}{
+        background-color: rgb(0, 0, 0);
+        box-shadow: 0 0 80px rgb(240, 99, 99) inset;
+        border:rgb(0, 0, 0) solid 1px;
+    }
+    #{percentage(random(40)/100)}{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+    #{percentage(random(90)/100)}{
+        background-color: rgb(0, 0, 0);
+        box-shadow: 0 0 80px rgb(240, 99, 99) inset;
+        border:rgb(0, 0, 0) solid 1px;
+    }
+    100%{
+        background-color: white;
+        box-shadow: 0 0 80px rgb(227, 227, 227) inset;
+    }
+}
