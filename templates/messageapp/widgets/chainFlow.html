@@ -21,6 +21,9 @@
         <button>報告</button>
     </dd>
 </dl>
+{% if replyQuery|length == 0 %}
+    <input type="hidden" id="lastID" value="{{ original.id }}">
+{% endif %}
 {% for reply in replyQuery %}
 <dl class="replyWrapper">
     {% if forloop.counter == replyQuery|length and reply.auth != user.id %}

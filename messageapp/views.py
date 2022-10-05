@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import MessageForm, FirstReplyForm
-from .models import Message
+from .models import Message, NgWords
 from accounts.models import User
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -8,6 +8,7 @@ from django.db import models
 from mlask import MLAsk
 import random
 import MeCab
+
 
 # Create your views here.
 @login_required
@@ -219,8 +220,38 @@ def store_reply(request):
     if request.method == 'POST':
         text = request.POST.get('text')
         auth = request.user.id
+        original_id = request.POST.get('original_id')
         parent_id = request.POST.get('parent_id')
-        last_id = request.POST.get('last_id')
+
+        print(f"text => {text}, auth => {auth}, original_id => {original_id}, parent_id => {parent_id}")
+
+        # IDがない場合
+        if original_id == "" or parent_id == "":
+            res = {
+                'code': 3,
+                'result': "メッセージIDがありません。",
+            }
+            return JsonResponse(res, safe=False)
+
+
+        parentMessage = Message.objects.get(id=parent_id)
+
+        #リプライに返信する場合
+        if parentMessage.type == 5:
+            if int(original_id) != parentMessage.original_id:
+                res = {
+                    'code': 3,
+                    'result': "メッセージIDが不正です。",
+                }
+                return JsonResponse(res, safe=False)
+        else:
+            if int(original_id) != parentMessage.id:
+                res = {
+                    'code': 3,
+                    'result': "メッセージIDが不正です。",
+                }
+                return JsonResponse(res, safe=False)
+
 
 
         # 発言内容が空白の場合
@@ -266,9 +297,11 @@ def store_reply(request):
             emotion = 0
 
         # DB保存処理
-        message = Message(text=text,auth=auth,emotion=emotion)
+        message = Message(text=text,auth=auth,emotion=emotion,type=5,parent_id=parent_id,original_id=original_id,to_id=parentMessage.auth)
         message.save()
 
+        parentMessage.update = True
+        parentMessage.save()
 
         # レスポンス
         res = {

@@ -13,3 +13,6 @@ class Message(models.Model):
     date = models.DateTimeField('日付', default=timezone.now)
     update = models.BooleanField(default=False)  # 返信があった場合のフラグ
     emotion = models.SmallIntegerField(default=0)  # 感情値
+
+class NgWords(models.Model):
+    text = models.TextField()

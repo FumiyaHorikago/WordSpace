@@ -6,26 +6,23 @@
         <div class="chain">
         </div>
         <div class="reply">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <div class="submit">
-                    <input type="submit" value="返答" id="chainMessage">
-                </div>
-                {% for field in reply %}
-                <div class="field">
-                    {% if not field.is_hidden %}
-                    {# 通常フィールドはラベルと入力枠を出力 #}
-                    {{ field }}
-                    {% else %}
-                    {# hidden属性で出力 #}
-                    {{ field.as_hidden }}
-                    {% endif %}
-                    {% for error in field.errors %}
-                    {{error}}
-                    {% endfor %}
-                </div>
+            <div class="submit">
+                <button id="chainMessage">返答</button>
+            </div>
+            {% for field in reply %}
+            <div class="field">
+                {% if not field.is_hidden %}
+                {# 通常フィールドはラベルと入力枠を出力 #}
+                {{ field }}
+                {% else %}
+                {# hidden属性で出力 #}
+                {{ field.as_hidden }}
+                {% endif %}
+                {% for error in field.errors %}
+                {{error}}
                 {% endfor %}
-            </form>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -70,6 +70,7 @@ $(function () {
     //メッセージクリック
     $(document).on('click', 'li.message', function () {
         const id = $(this).children('input').val();
+        $('#id_parent').val(id);
         $.ajax({
             //POST通信
             type: "post",

@@ -13,16 +13,16 @@ $(function () {
     }
 
     //サウンドフラグ管理
-    $('#soundEnable,#play').on('click',function(){
+    $('#soundEnable,#play').on('click', function () {
         soundFlag = true;
     })
-    $('#mute').on('click',function(){
+    $('#mute').on('click', function () {
         soundFlag = false;
     })
 
     //読み込み完了後
     $('#soundEnable,#soundDisable').on('click', function () {
-        setTimeout(function(){
+        setTimeout(function () {
             var text1 = 'ナビゲーターを起動します。';
             var text2 = '…起動完了';
             var text3 = 'インターフェースを表示します。'
@@ -33,7 +33,7 @@ $(function () {
                 $('.eachTextAnime').html(setAndroidText('#brain .word'));
                 TextFadeInAnime();
                 $('.cube div').addClass('startup');
-                if(soundFlag){
+                if (soundFlag) {
                     media = document.getElementById('audio-StartUp1');
                     media.volume = 0.3;
                     media.play();
@@ -42,7 +42,7 @@ $(function () {
                     $('#brain .word').text(text2);
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
-                    if(soundFlag){
+                    if (soundFlag) {
                         media = document.getElementById('audio-StartUp2');
                         media.volume = 0.3;
                         media.play();
@@ -53,7 +53,7 @@ $(function () {
                     $('#brain .word').text(text3);
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
-                    if(soundFlag){
+                    if (soundFlag) {
                         media = document.getElementById('audio-StartUp3');
                         media.volume = 0.3;
                         media.play();
@@ -69,7 +69,7 @@ $(function () {
                     });
                 }, 18000)
             }
-        },2000)
+        }, 2000)
     });
 
 
@@ -100,7 +100,7 @@ $(function () {
             $('.eachTextAnime').html(setAndroidText('#brain .word'));
             TextFadeInAnime();
             $('.cube div').addClass('talk');
-            if(soundFlag){
+            if (soundFlag) {
                 media.volume = 0.5;
                 media.play();
             }
@@ -119,7 +119,7 @@ $(function () {
 
 
     //メッセージリロード時の発言
-    $(document).on('click','#messageReload', function () {
+    $(document).on('click', '#messageReload', function () {
         pattern = getRandomInt(0, 3);
         if (pattern == 0) {
             var text1 = '発言を再読込します。';
@@ -138,7 +138,7 @@ $(function () {
             $('.eachTextAnime').html(setAndroidText('#brain .word'));
             TextFadeInAnime();
             $('.cube div').addClass('talk');
-            if(soundFlag){
+            if (soundFlag) {
                 media.volume = 0.5;
                 media.play();
             }
@@ -161,7 +161,7 @@ $(function () {
             $('.eachTextAnime').html(setAndroidText('#brain .word'));
             $('.cube div').addClass('talk');
             TextFadeInAnime();
-            if(soundFlag){
+            if (soundFlag) {
                 media = document.getElementById('audio-Response');
                 media.volume = 0.5;
                 media.play();
@@ -174,8 +174,8 @@ $(function () {
     });
 
 
-     //影響クリック時の発言
-     $('#effect').on('click', function () {
+    //影響クリック時の発言
+    $('#effect').on('click', function () {
         pattern = getRandomInt(0, 3);
         if (pattern == 0) {
             var text1 = '言葉と感情は私たちに変化をもたらす…';
@@ -194,7 +194,7 @@ $(function () {
             $('.eachTextAnime').html(setAndroidText('#brain .word'));
             $('.cube div').addClass('talk');
             TextFadeInAnime();
-            if(soundFlag){
+            if (soundFlag) {
                 media.volume = 0.5;
                 media.play();
             }
@@ -275,9 +275,9 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass(className);
-                    $('#sendMessage').prop('disabled',true).val('処理中');
+                    $('#sendMessage').prop('disabled', true).val('処理中');
                     $('#id_text').val('');
-                    if(soundFlag){
+                    if (soundFlag) {
                         media.volume = 0.5;
                         media.play();
                     }
@@ -294,7 +294,7 @@ $(function () {
                     }, 12000);
                     setTimeout(function () {
                         talkCapacity = 0;
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                     }, 18000)
                 } else if (res.code == 1) { // GETメソッド
                     var text1 = 'エラー発生';
@@ -305,8 +305,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error1');
                         media.volume = 0.5;
                         media.play();
@@ -319,7 +319,7 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                     }, 12000);
                 } else if (res.code == 2) { // 発言内容未入力
                     var text1 = 'エラー発生';
@@ -330,8 +330,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error2');
                         media.volume = 0.5;
                         media.play();
@@ -344,7 +344,7 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                     }, 12000);
                 } else if (res.code == 3) { // 連携識別ID不正値
                     var text1 = 'エラー発生';
@@ -355,8 +355,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error3');
                         media.volume = 0.5;
                         media.play();
@@ -369,7 +369,7 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                     }, 12000);
                 }
                 else if (res.code == 4) { // 不適切なワード
@@ -381,8 +381,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error4');
                         media.volume = 0.5;
                         media.play();
@@ -395,13 +395,37 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                     }, 12000);
                 }
             })
             //通信が失敗したとき
             .fail((error) => {
-                console.log(error.statusText);
+                var text1 = 'エラー発生';
+                var text2 = 'ナビゲーターとの通信に失敗しました。';
+                talkCapacity = 1;
+
+                $('#brain .word').text(text1);
+                $('.eachTextAnime').html(setAndroidText('#brain .word'));
+                TextFadeInAnime();
+                $('.cube div').addClass('ptError');
+                $('#sendMessage').prop('disabled', true).val('処理中');
+                if (soundFlag) {
+                    media = document.getElementById('audio-Error1');
+                    media.volume = 0.5;
+                    media.play();
+                }
+                setTimeout(function () {
+                    $('#brain .word').text(text2);
+                    $('.eachTextAnime').html(setAndroidText('#brain .word'));
+                    TextFadeInAnime();
+                }, 6000);
+                setTimeout(function () {
+                    talkCapacity = 0;
+                    $('.cube div').removeClass('ptError');
+                    $('#sendMessage').prop('disabled', false).val('発言');
+                    $('#details').addClass('open');
+                }, 12000);
             });
     })
 
@@ -409,8 +433,8 @@ $(function () {
     //　リプライ送信
     $('#chainMessage').on('click', function () {
         text = $('#id_reply').val();
-        parent_id = $('#id_parent').val();
-        last_id = $('#lastID').val();
+        original_id = $('#id_parent').val();
+        parent_id = $('#lastID').val();
 
         $('#details').removeClass('open');
         clearInterval(talkTimer1)
@@ -423,55 +447,55 @@ $(function () {
             dataType: "json",
             data: {
                 text: text,
-                parent: message_id,
-                last_id: last_id,
+                original_id: original_id,
+                parent_id: parent_id,
             },
         })
             //通信が成功したとき
             .then((res) => {
                 if (res.code == 0) { // 保存成功
                     if (res.emotion == -3) {  // NegativeLevel2
-                        text1 = '発險?を取得';
-                        text2 = '縺ｨ…ても強い負の感情を?じる…';
-                        text3 = '全て私に吐き出して。助け縺ｦくれる者が必ず居るから…';
+                        text1 = '返答斐ｒ…取得';
+                        text2 = 'とても暗い感情が込められて…縺?る…';
+                        text3 = '発言者にもこの空間に悪い影響が無ければ…┌縺代けど…';
                         className = 'NegaLvMax';
-                        media = document.getElementById('audio-Nega3');
+                        media = document.getElementById('audio-rep-Nega3');
                     } else if (res.emotion == -2) {  // NegativeLevel1
-                        text1 = '発言を取得';
-                        text2 = 'この発言からは負の感情が読み取れる…';
-                        text3 = 'きっとここに集う者たちがあなたに元気を与えてくれる。';
+                        text1 = '返答を取得';
+                        text2 = 'なんだか暗い返答ね…';
+                        text3 = '言葉の影響力はとても強いことを忘れないで。';
                         className = 'NegaLv2';
-                        media = document.getElementById('audio-Nega2');
+                        media = document.getElementById('audio-rep-Nega2');
                     } else if (res.emotion == -1) {  // NegativeLevel1
-                        text1 = '発言を取得';
-                        text2 = 'この発言は少し暗いけど遠慮しないで聞かせて。';
-                        text3 = '私は共感者を探すのが役目だもの…';
+                        text1 = '返答を取得';
+                        text2 = 'あなたが興味を示すことで言葉は連鎖する…';
+                        text3 = 'この調子で迷える言葉を導いて。';
                         className = 'NegaLv1';
-                        media = document.getElementById('audio-Nega1');
+                        media = document.getElementById('audio-rep-Nega1');
                     } else if (res.emotion == 0) {  // Newtral
-                        text1 = '発言を取得';
-                        text2 = '…私にはこの発言の意味が理解できないみたい。';
-                        text3 = 'ただ、理解を示す者も居るはずよ。'
+                        text1 = '返答を取得';
+                        text2 = 'この返答からは感情を読み取れません。';
+                        text3 = '私もまだ未熟者ね…。'
                         className = 'Newtral';
-                        media = document.getElementById('audio-Newtral');
+                        media = document.getElementById('audio-rep-Newtral');
                     } else if (res.emotion == 1) {  // PositiveLevel1
-                        text1 = '発言を取得';
-                        text2 = 'なんだか明るい気分になる言葉…';
-                        text3 = '同じ感情を抱く者同士繋がりが生まれますように…';
+                        text1 = '返答を取得';
+                        text2 = 'あなたが興味を示すことで言葉は連鎖する…';
+                        text3 = 'これからもあなたの返答を心待ちにしているわ…';
                         className = 'PosiLv1';
-                        media = document.getElementById('audio-Posi1');
+                        media = document.getElementById('audio-rep-Posi1');
                     } else if (res.emotion == 2) {  // PositiveLevel1
-                        text1 = '発言を取得';
-                        text2 = '心温まるいい言葉ね…ありがとう。';
-                        text3 = 'これからもあなたの発言に期待してるわ…。';
+                        text1 = '返答を取得';
+                        text2 = '優しい返答…なんだか嬉しいわ。';
+                        text3 = 'その心を忘れないで…。';
                         className = 'PosiLv2';
-                        media = document.getElementById('audio-Posi2');
+                        media = document.getElementById('audio-rep-Posi2');
                     } else if (res.emotion == 3) {  // PositiveLevel2
-                        text1 = '発言を取得';
-                        text2 = 'とても素晴らしい発言をありがとう。';
-                        text3 = 'あなたの言葉は幸せに満ちている…。';
+                        text1 = '返答を取得';
+                        text2 = '不思議と明るくなる素敵な返答ね。';
+                        text3 = 'あなたならこの空間の暗い感情も浄化できるかもしれない。';
                         className = 'PosiLvMax';
-                        media = document.getElementById('audio-Posi3');
+                        media = document.getElementById('audio-rep-Posi3');
                     }
 
                     talkCapacity = 1;
@@ -481,9 +505,9 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass(className);
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    $('#id_text').val('');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    $('#id_reply').val('');
+                    if (soundFlag) {
                         media.volume = 0.5;
                         media.play();
                     }
@@ -500,7 +524,8 @@ $(function () {
                     }, 12000);
                     setTimeout(function () {
                         talkCapacity = 0;
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
+                        $('.message-wrap').removeClass('move');
                     }, 18000)
                 } else if (res.code == 1) { // GETメソッド
                     var text1 = 'エラー発生';
@@ -511,8 +536,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error1');
                         media.volume = 0.5;
                         media.play();
@@ -525,8 +550,9 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                         $('#details').addClass('open');
+                        $('.message-wrap').removeClass('move');
                     }, 12000);
                 } else if (res.code == 2) { // 返答内容未入力
                     var text1 = 'エラー発生';
@@ -537,8 +563,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error2');
                         media.volume = 0.5;
                         media.play();
@@ -551,8 +577,9 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                         $('#details').addClass('open');
+                        $('.message-wrap').removeClass('move');
                     }, 12000);
                 } else if (res.code == 3) { // 連携識別ID不正値
                     var text1 = 'エラー発生';
@@ -563,8 +590,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error3');
                         media.volume = 0.5;
                         media.play();
@@ -577,8 +604,9 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                         $('#details').addClass('open');
+                        $('.message-wrap').removeClass('move');
                     }, 12000);
                 }
                 else if (res.code == 4) { // 不適切なワード
@@ -590,8 +618,8 @@ $(function () {
                     $('.eachTextAnime').html(setAndroidText('#brain .word'));
                     TextFadeInAnime();
                     $('.cube div').addClass('ptError');
-                    $('#sendMessage').prop('disabled',true).val('処理中');
-                    if(soundFlag){
+                    $('#sendMessage').prop('disabled', true).val('処理中');
+                    if (soundFlag) {
                         media = document.getElementById('audio-Error4');
                         media.volume = 0.5;
                         media.play();
@@ -604,14 +632,40 @@ $(function () {
                     setTimeout(function () {
                         talkCapacity = 0;
                         $('.cube div').removeClass('ptError');
-                        $('#sendMessage').prop('disabled',false).val('発言');
+                        $('#sendMessage').prop('disabled', false).val('発言');
                         $('#details').addClass('open');
+                        $('.message-wrap').removeClass('move');
                     }, 12000);
                 }
             })
             //通信が失敗したとき
             .fail((error) => {
-                console.log(error.statusText);
+                var text1 = 'エラー発生';
+                var text2 = 'ナビゲーターとの通信に失敗しました。';
+                talkCapacity = 1;
+
+                $('#brain .word').text(text1);
+                $('.eachTextAnime').html(setAndroidText('#brain .word'));
+                TextFadeInAnime();
+                $('.cube div').addClass('ptError');
+                $('#sendMessage').prop('disabled', true).val('処理中');
+                if (soundFlag) {
+                    media = document.getElementById('audio-Error1');
+                    media.volume = 0.5;
+                    media.play();
+                }
+                setTimeout(function () {
+                    $('#brain .word').text(text2);
+                    $('.eachTextAnime').html(setAndroidText('#brain .word'));
+                    TextFadeInAnime();
+                }, 6000);
+                setTimeout(function () {
+                    talkCapacity = 0;
+                    $('.cube div').removeClass('ptError');
+                    $('#sendMessage').prop('disabled', false).val('発言');
+                    $('#details').addClass('open');
+                    $('.message-wrap').removeClass('move');
+                }, 12000);
             });
     })
 

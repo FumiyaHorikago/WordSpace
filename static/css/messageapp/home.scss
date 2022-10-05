@@ -187,7 +187,7 @@ main {
             text-align: center;
             font-size: 14px;
             &.interface {
-                // display: none;
+                display: none;
             }
             &:hover {
                 background-color: #aaa;
@@ -400,7 +400,7 @@ main {
                     border-top: solid 1px #B3B3B3;
                     margin-top: 20px;
                     .submit{
-                        input{
+                        button{
                             display: block;
                             width: 100px;
                             background-color: #B3B3B3;
@@ -466,34 +466,32 @@ main {
                         display: inline-block;
                     }
                 }
-                form {
-                    .field {
-                        margin-bottom: 10px;
-                        label {
-                            display: none;
-                        }
-                        textarea {
-                            border: solid 1px #ddd;
-                            width: 100%;
-                            height: 40vh;
-                            font-size: 14px;
-                            padding: 5px;
-                            background-color: white;
-                        }
+                .field {
+                    margin-bottom: 10px;
+                    label {
+                        display: none;
                     }
-                    .submit {
-                        input {
-                            display: block;
-                            width: 100%;
-                            padding: 5px 10px;
-                            text-align: center;
-                            transition: 0.5s;
-                            &:hover {
-                                background-color: rgb(230, 230, 230);
-                            }
-                            &:disabled {
-                                background-color: rgb(180, 180, 180);
-                            }
+                    textarea {
+                        border: solid 1px #ddd;
+                        width: 100%;
+                        height: 40vh;
+                        font-size: 14px;
+                        padding: 5px;
+                        background-color: white;
+                    }
+                }
+                .submit {
+                    button{
+                        display: block;
+                        width: 100%;
+                        padding: 5px 10px;
+                        text-align: center;
+                        transition: 0.5s;
+                        &:hover {
+                            background-color: rgb(230, 230, 230);
+                        }
+                        &:disabled {
+                            background-color: rgb(180, 180, 180);
                         }
                     }
                 }
